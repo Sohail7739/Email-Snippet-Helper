@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Email Snippet Helper",
+  "version": "1.0.1",
+  "description": "Quickly insert pre-defined email snippets in Gmail or Outlook Web.",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "host_permissions": [
+    "https://mail.google.com/*",
+    "https://outlook.office.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icons/icon48.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://mail.google.com/*", "https://outlook.office.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}

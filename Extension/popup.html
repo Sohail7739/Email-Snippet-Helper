@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Email Snippets</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      width: 350px;
+      min-height: 400px;
+    }
+    .snippet-btn {
+      font-size: 0.85rem;
+      text-align: left;
+      white-space: normal;
+      height: auto;
+      padding: 8px 12px;
+    }
+    .snippet-text {
+      display: block;
+      max-width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .delete-btn {
+      position: absolute;
+      top: 2px;
+      right: 2px;
+      padding: 2px 6px;
+      font-size: 0.7rem;
+    }
+    .snippet-item {
+      position: relative;
+    }
+  </style>
+</head>
+<body class="p-3">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h6 class="mb-0">📧 Email Snippets</h6>
+    <button id="syncBtn" class="btn btn-outline-primary btn-sm" title="Sync with cloud">
+      🔄
+    </button>
+  </div>
+  
+  <div id="snippets" class="mb-3"></div>
+  
+  <div class="border-top pt-3">
+    <h6 class="mb-2">Add New Snippet</h6>
+    <textarea id="newSnippet" class="form-control form-control-sm" 
+              placeholder="Enter your email snippet..." rows="3"></textarea>
+    <div class="d-flex gap-2 mt-2">
+      <button id="addSnippet" class="btn btn-primary btn-sm flex-fill">Save Snippet</button>
+      <button id="clearBtn" class="btn btn-outline-secondary btn-sm">Clear</button>
+    </div>
+  </div>
+
+  <div id="status" class="mt-2 text-center text-muted small"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
